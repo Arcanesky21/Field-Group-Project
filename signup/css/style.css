@@ -373,7 +373,7 @@ body {
   color: #222;
   font-weight: 400;
   background: #282828;
-  padding: 90px 0;
+  padding: 0;
 }
 
 .container {
@@ -577,9 +577,16 @@ select {
   color: #999;
   margin-right: 8px;
 }
-#reset:hover {
+#reset:hover,a:hover {
   background: #ff6801;
   color: #fff;
+}
+button:hover{
+  background-color: #ff6801;
+}
+a:link,a:visited{
+  color:  #999;
+  text-decoration: none;
 }
 
 #submit {
