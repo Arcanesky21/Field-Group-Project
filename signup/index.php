@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="../signup/css/style.css">
+    <?php require_once "register.php"; ?>
 </head>
 
 <body>
@@ -22,17 +24,31 @@
                     <img src="images/signup-img.jpg" alt="">
                 </div>
                 <div class="signup-form">
-                    <form method="POST" class="register-form" id="register-form">
+                    <form method="POST" class="register-form" id="register-form" action="index.php">
+                        <?php include('errors.php'); ?>
                         <h2>student registration form</h2>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="name">Name :</label>
-                                <input type="text" name="name" id="name" required/>
+                                <label for="first_name">First Name :</label>
+                                <input type="text" name="first_name" id="fname" placeholder="Enter first name" value="<?php echo $fName; ?>" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name">Last Name :</label>
+                                <input type="text" name="last_name" id="lname" placeholder="Enter last name" required />
                             </div>
                             <div class="form-group">
                                 <label for="name">ID Number :</label>
-                                <input type="number" name="identification" id="ID" required/>
+                                <input type="number" name="identification" id="ID" placeholder="Enter ID #" required />
                             </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password :</label>
+                            <input type="password" name="password_1" id="pass1" placeholder="Enter Password 10 character max" maxlength="10" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password :</label>
+                            <input type="password" name="password_2" id="pass2" placeholder="Confirm Password" maxlength="10" required />
                         </div>
                         <div class="form-radio">
                             <label for="gender" class="radio-label">Gender :</label>
@@ -49,19 +65,19 @@
                         </div>
                         <div class="form-group">
                             <label for="birth_date">DOB :</label>
-                            <input type="text" name="birth_date" id="birth_date">
+                            <input type="date" name="birth_date" id="birth_date" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="email">Email ID :</label>
-                            <input type="email" name="email" id="email" />
+                            <input type="email" name="email" id="email" required />
                         </div>
-                        
+
                         <div class="form-submit">
-                            
-                            <button class="submit"><a href="../index.html" >Home</a></button>
+
+                            <button class="submit"><a href="../index.html">Home</a></button>
                             <input type="submit" value="Reset All" class="submit" name="reset" id="reset" />
-                            <input type="submit" value="Submit Form" class="submit" name="submit" id="submit" />
+                            <input type="submit" value="Submit Form" class="submit" name="reg_user" id="submit" />
                         </div>
                     </form>
                 </div>
@@ -74,4 +90,5 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="js/main.js"></script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
 </html>
