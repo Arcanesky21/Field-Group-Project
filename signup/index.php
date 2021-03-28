@@ -25,7 +25,6 @@
                 </div>
                 <div class="signup-form">
                     <form method="POST" class="register-form" id="register-form" action="index.php">
-                        <?php include('errors.php'); ?>
                         <h2>student registration form</h2>
                         <div class="form-row">
                             <div class="form-group">
