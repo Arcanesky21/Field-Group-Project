@@ -29,7 +29,7 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="first_name">First Name :</label>
-                                <input type="text" name="first_name" id="fname" placeholder="Enter first name" value="<?php echo $fName; ?>" required />
+                                <input type="text" name="first_name" id="fname" placeholder="Enter first name" required />
                             </div>
                             <div class="form-group">
                                 <label for="last_name">Last Name :</label>
