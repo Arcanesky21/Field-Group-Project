@@ -40,8 +40,8 @@
 							<span class="text">NcuMedical@ncu.edu.jm</span>
 						</div>
 						<div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
-							<p class="mb-0 register-link"><a href="../Field-Group-Project/signup/index.html" class="mr-3">Sign Up</a>
-								<a href="../Field-Group-Project/signin/index.html">Sign In</a>
+							<p class="mb-0 register-link"><a href="../Field-Group-Project/signup/index.php" class="mr-3">Sign Up</a>
+								<a href="../Field-Group-Project/signin/index.php">Sign In</a>
 							</p>
 						</div>
 					</div>

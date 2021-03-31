@@ -26,6 +26,7 @@
                 <div class="signup-form">
                     <form method="POST" class="register-form" id="register-form" action="index.php">
                         <h2>student registration form</h2>
+                        <?php require "errors.php" ?>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="first_name">First Name :</label>
@@ -74,7 +75,7 @@
 
                         <div class="form-submit">
 
-                            <button class="submit"><a href="../index.html">Home</a></button>
+                            <button class="submit"><a href="../index.php">Home</a></button>
                             <input type="submit" value="Reset All" class="submit" name="reset" id="reset" />
                             <input type="submit" value="Submit Form" class="submit" name="reg_user" id="submit" />
                         </div>
