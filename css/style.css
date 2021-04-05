@@ -22,6 +22,9 @@
   margin: -20px;
 }
 
+.tablinks{
+ line-height: 5px;
+}
 #container1 {
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
   position: relative;
@@ -29,7 +32,9 @@
   background: inherit;
   overflow: hidden;
 }
-
+#profile{
+  width: 35%;
+}
 /* Gradient*/
 .movingGradient {
   background: linear-gradient(270deg, #364f6b, #3fc1c9);
@@ -9182,7 +9187,11 @@ textarea.form-control {
 @media (max-width: 767.98px) {
   .ftco-counter .btn {
     display: block;
-    margin-bottom: 5px; } }
+    margin-bottom: 5px; } 
+  
+#profile{
+  width: 100%;
+}}
 
 .ftco-counter .text {
   display: inline-block; }
