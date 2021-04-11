@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -76,7 +75,7 @@
 				<div class="col-md-6 pt-5 ftco-animate">
 					<div class="mt-5">
 						<span class="subheading">Welcome to Norther Caribbean University Medical Center</span>
-						<h1 class="mb-4">We are here <br>for your Care</h1>
+						<h1 class="mb-4" style="color: white;" >We are here <br>for your Care</h1>
 						<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
 						<p><a href="#" class="btn btn-primary py-3 px-4">Make an appointment</a></p>
 					</div>

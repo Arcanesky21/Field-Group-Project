@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -44,25 +43,27 @@
                         </div>
                         <div class="form-group">
                             <label for="password">Password :</label>
-                            <input type="password" name="password_1" id="pass1" placeholder="Enter Password 10 character max" maxlength="10" required />
+                            <input type="password" name="password_1" id="pass1" placeholder="Enter Password 20 character max" maxlength="20" required />
                         </div>
                         <div class="form-group">
                             <label for="password">Password :</label>
-                            <input type="password" name="password_2" id="pass2" placeholder="Confirm Password" maxlength="10" required />
+                            <input type="password" name="password_2" id="pass2" placeholder="Confirm Password" maxlength="20" required />
                         </div>
                         <div class="form-radio">
-                            <label for="gender" class="radio-label">Gender :</label>
+                            <label for="gender" class="radio-label">Status :</label>
                             <div class="form-radio-item">
-                                <input type="radio" name="gender" id="male" checked>
-                                <label for="male">Male</label>
+                                <input type="radio" name="group1" id="student" value="Student" checked>
+                                <label for="student">Student</label>
                                 <span class="check"></span>
                             </div>
                             <div class="form-radio-item">
-                                <input type="radio" name="gender" id="female">
-                                <label for="female">Female</label>
+                                <input type="radio" name="group1" id="doctor" value="Doctor">
+                                <label for="doctor">Doctor</label>
                                 <span class="check"></span>
                             </div>
                         </div>
+                        
+
                         <div class="form-group">
                             <label for="birth_date">DOB :</label>
                             <input type="date" name="birth_date" id="birth_date" required>
@@ -74,8 +75,11 @@
                         </div>
 
                         <div class="form-submit">
-
-                            <button class="submit"><a href="../index.php">Home</a></button>
+                            <div>
+                                <a href="../signin/index.php" style="float:left;">Signin</a>
+                            </div>
+                            <div> <a href="../index.php" style="float:left;">Home</a>
+                            </div>
                             <input type="submit" value="Reset All" class="submit" name="reset" id="reset" />
                             <input type="submit" value="Submit Form" class="submit" name="reg_user" id="submit" />
                         </div>
