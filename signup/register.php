@@ -8,7 +8,7 @@ $registerHandle->regisFunct(); */
 
 
 $errors = array();
-    
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -32,7 +32,7 @@ if (isset($_POST['reg_user'])) {
     $lName = mysqli_real_escape_string($db, $_POST['last_name']);
     $email = mysqli_real_escape_string($db, $_POST['email']);
     $dOB = mysqli_real_escape_string($db, $_POST['birth_date']);
-    $gender = mysqli_real_escape_string($db, $_POST['gender']);
+    $gender = mysqli_real_escape_string($db, $_POST['group1']);
     $idNumber = mysqli_real_escape_string($db, $_POST['identification']);
     $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
     $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
@@ -40,7 +40,7 @@ if (isset($_POST['reg_user'])) {
 
     if ($password_1 != $password_2) {
         array_push($errors, "The two passwords do not match");
-      }
+    }
 
     $user_check_query = "SELECT * FROM registeredusers WHERE registeredID='$idNumber' OR email='$email' LIMIT 1";
     $result = mysqli_query($db, $user_check_query);
@@ -57,7 +57,8 @@ if (isset($_POST['reg_user'])) {
     }
 
     if (count($errors) == 0) {
-        $password = password_hash($password_1, PASSWORD_DEFAULT); //encrypt the password before saving in the database
+         $password = password_hash($password_1, PASSWORD_DEFAULT); //encrypt the password before saving in the database
+        // $password = md5($password);
 
         $query = "INSERT INTO registeredusers (registeredID,first_name,last_name,gender,dOB,email,pass) 
                   VALUES('$idNumber', '$fName', '$lName', '$gender', '$dOB','$email','$password')";
