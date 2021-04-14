@@ -23,7 +23,7 @@
                     <img src="images/signup-img.jpg" alt="">
                 </div>
                 <div class="signup-form">
-                    <form method="POST" class="register-form" id="register-form" action="index.php">
+                    <form method="POST" class="register-form" id="register-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                         <h2>student registration form</h2>
                         <?php require "errors.php" ?>
                         <div class="form-row">
@@ -76,9 +76,9 @@
 
                         <div class="form-submit">
                             <div>
-                                <a href="../signin/index.php" style="float:left;">Signin</a>
+                                <a href="../signin/signin.php" style="float:left;">Signin</a>
                             </div>
-                            <div> <a href="../index.php" style="float:left;">Home</a>
+                            <div> <a href="../signin/index.php" style="float:left;">Home</a>
                             </div>
                             <input type="submit" value="Reset All" class="submit" name="reset" id="reset" />
                             <input type="submit" value="Submit Form" class="submit" name="reg_user" id="submit" />
