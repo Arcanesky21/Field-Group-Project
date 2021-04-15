@@ -77,9 +77,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 							<p>
 								Not yet a member? <a href="../signup/signup.php">Sign up</a>
 							</p>
-							<a href="#" class="txt1">
-								Forgot Password?
-							</a>
+							
 
 						</div>
 					</div>
@@ -89,7 +87,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 							Login
 						</button>
 					
-							<a href="index.php"> Home</a>
+							<a href="index.php" class="login100-form-btn"> Home</a>
 						
 					</div>
 				</form>

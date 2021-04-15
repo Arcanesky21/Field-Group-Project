@@ -1,7 +1,5 @@
 <?php
-session_start();
 require_once "../database/dbconnect.php";
-
 $servername = "localhost";
 $username = "root";
 $passwor = "";
@@ -33,8 +31,7 @@ if(isset($_POST["sub_appointment"])){
         $sqlquery = "INSERT INTO appointments(first_name,last_name,services,appdate,contact,messages) VALUES ('$fname','$lname','$service','$moddate','$contact','$message')";
 
         $appdata = mysqli_query($db,$sqlquery);
-        header("location:index.php");       
-        $_SESSION["appointment"] = $newdate;
+        
       }
 }
 

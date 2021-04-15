@@ -62,7 +62,7 @@
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav nav ml-auto">
-					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+					<li class="nav-item"><a href="home.php" class="nav-link"><span>Home</span></a></li>
 					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
 					<li class="nav-item"><a href="#department-section" class="nav-link"><span>Department</span></a></li>
 					<li class="nav-item"><a href="#doctor-section" class="nav-link"><span>Doctors</span></a></li>
@@ -81,7 +81,7 @@
 					<div class="mt-5">
 						<span class="subheading">Welcome to Norther Caribbean University Medical Center</span>
 						<h1 class="mb-4" style="color: white;" >We are here <br>for your Care</h1>
-						<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+						<p class="mb-4" style="color: white;">When you have a dream, you've got to grab it and never let go.</p>
 						<p><a href="#apointment_submission" class="btn btn-primary py-3 px-4">Make an appointment</a></p>
 					</div>
 				</div>
@@ -101,7 +101,7 @@
 						<div class="row justify-content-start pb-3">
 							<div class="col-md-12 heading-section ftco-animate p-4 p-lg-5">
 								<h2 class="mb-4">We Are <span>Northern Caribbean University Medical Clinic</span></h2>
-								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+								<p>What you get by achieving your goals is not as important as what you become by achieving your goals.</p>
 								<p><a href="#apointment_submission" class="btn btn-primary py-3 px-4">Make an appointment</a> <a href="#" class="btn btn-secondary py-3 px-4">Contact us</a></p>
 							</div>
 						</div>
@@ -326,7 +326,6 @@
 									<li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
 									<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
 								</ul>
-								<p><a href="#" class="btn btn-primary">Book now</a></p>
 							</div>
 						</div>
 					</div>
@@ -347,7 +346,6 @@
 									<li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
 									<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
 								</ul>
-								<p><a href="#" class="btn btn-primary">Book now</a></p>
 							</div>
 						</div>
 					</div>
@@ -368,7 +366,6 @@
 									<li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
 									<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
 								</ul>
-								<p><a href="#" class="btn btn-primary">Book now</a></p>
 							</div>
 						</div>
 					</div>
@@ -389,7 +386,6 @@
 									<li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
 									<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
 								</ul>
-								<p><a href="#" class="btn btn-primary">Book now</a></p>
 							</div>
 						</div>
 					</div>
@@ -405,7 +401,7 @@
 				<div class="col-md-5 heading-section heading-section-white">
 					<span class="subheading">Fun facts</span>
 					<h2 class="mb-4">Over 5,100 patients trust us</h2>
-					<p class="mb-0"><a href="#" class="btn btn-secondary px-4 py-3">Make an appointment</a></p>
+					<p class="mb-0"><a href="#apointment_submission" class="btn btn-secondary px-4 py-3">Make an appointment</a></p>
 				</div>
 				<div class="col-md-7">
 					<div class="row pt-4">
@@ -468,7 +464,7 @@
 									</span>
 								</div>
 								<div class="text px-4">
-									<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									<p class="mb-4">Execptional.</p>
 									<p class="name">Andrew Gooden</p>
 									<span class="position">Patients</span>
 								</div>
@@ -476,14 +472,14 @@
 						</div>
 						<div class="item">
 							<div class="testimony-wrap text-center py-4 pb-5">
-								<div class="user-img" style="background-image: url(../images/person_1.jpg)">
+								<div class="user-img" style="background-image: url(../images/person_6.jpg)">
 									<span class="quote d-flex align-items-center justify-content-center">
 										<i class="icon-quote-left"></i>
 									</span>
 								</div>
 								<div class="text px-4">
-									<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p class="name">Mario Fagan</p>
+									<p class="mb-4">Phenominal.</p>
+									<p class="name">Mikarlo Franis</p>
 									<span class="position">Patients</span>
 								</div>
 							</div>
@@ -496,7 +492,7 @@
 									</span>
 								</div>
 								<div class="text px-4">
-									<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									<p class="mb-4">They were good.</p>
 									<p class="name">Zachary Berry</p>
 									<span class="position">Patients</span>
 								</div>
@@ -504,13 +500,13 @@
 						</div>
 						<div class="item">
 							<div class="testimony-wrap text-center py-4 pb-5">
-								<div class="user-img" style="background-image: url(../images/person_1.jpg)">
+								<div class="user-img" style="background-image: url(../images/person_5.jpg)">
 									<span class="quote d-flex align-items-center justify-content-center">
 										<i class="icon-quote-left"></i>
 									</span>
 								</div>
 								<div class="text px-4">
-									<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									<p class="mb-4">Phenominal Experience.</p>
 									<p class="name">Mickailia Reid</p>
 									<span class="position">Patients</span>
 								</div>
@@ -518,13 +514,13 @@
 						</div>
 						<div class="item">
 							<div class="testimony-wrap text-center py-4 pb-5">
-								<div class="user-img" style="background-image: url(../images/person_1.jpg)">
+								<div class="user-img" style="background-image: url(../images/brian.jpg)">
 									<span class="quote d-flex align-items-center justify-content-center">
 										<i class="icon-quote-left"></i>
 									</span>
 								</div>
 								<div class="text px-4">
-									<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+									<p class="mb-4">Exceptional.</p>
 									<p class="name">Brian Miller</p>
 									<span class="position">Patients</span>
 								</div>
@@ -644,11 +640,11 @@
 					<div class="ftco-footer-widget mb-4 ml-md-4">
 						<h2 class="ftco-heading-2">Links</h2>
 						<ul class="list-unstyled">
-							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
+							<li><a href="home.php"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
 							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
-							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Departments</a></li>
-							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Doctors</a></li>
-							<li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
+							<li><a href="#department-section"><span class="icon-long-arrow-right mr-2"></span>Departments</a></li>
+							<li><a href="#doctor-section"><span class="icon-long-arrow-right mr-2"></span>Doctors</a></li>
+							<li><a href="#contact-section"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
 						</ul>
 					</div>
 				</div>
