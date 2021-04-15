@@ -37,6 +37,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <?php require_once "userLoginData.php";
   require_once "regappointment.php";
+  require_once "edituser.php";
   ?>
 
 </head>
@@ -48,17 +49,17 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   <div class=" justify-content-center container">
     <div class="container m-auto text-center mx-5" id="profile">
       <div>
-        <h4 class="container m-auto text-center mx-5">Welcome, <p class="container m-auto text-center mx-5"><?php echo $_SESSION["id"] . " <br/>" . "to our site"; ?></p>
+        <h4 class="container m-auto text-center mx-5">Welcome, <p class="container m-auto text-center mx-5"><?php echo $_SESSION["id"] . "</br>"; ?></p>
           </h1>
-          <a href="logout.php" class="btn btn-danger ml-3 m-auto text-center">Sign Out</a>
 
       </div>
 
-      <img style="max-width: 50%;" class=" rounded-circle  img-fluid mb-3" alt="USER PIC" src="../images/brian.jpg" />
+      <img style="max-width: 50%;" class=" rounded-circle  img-fluid mb-3" alt="USER PIC" src="../images/usepic.jpeg" />
       <form class="justify-content-center ">
         <div class="form-group  ">
         </div>
 
+        ?>
       </form>
     </div>
     <div>
@@ -122,7 +123,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             </div>
 
           </div>
-
+          <a href="logout.php" class="btn btn-danger ml-3 m-auto text-center">Sign Out</a>
         </div>
       </div>
 
@@ -137,7 +138,42 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
               </button>
             </div>
             <div class="modal-body">
-              app `1
+              <?php require_once "getappointmemts.php";
+              ?>
+              <div class="row justify-content-center">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>
+                        First Name
+                      </th>
+                      <th>
+                        Last Name
+                      </th>
+                      <th>
+                        Contact
+                      </th>
+                      <th>
+                        Service
+                      </th>
+                      <th>
+                        Appointment
+                      </th>
+                    </tr>
+                  </thead>
+
+                  <?php while ($row = $appointquery->fetch_assoc()) : ?>
+                    <tr>
+                      <td><?php echo $row["first_name"] ?></td>
+                      <td><?php echo $row["last_name"] ?></td>
+                      <td><?php echo $row["contact"] ?></td>
+                      <td><?php echo $row["services"] ?></td>
+                      <td><?php echo $row["appdate"] ?></td>
+                      <td></td>
+                    </tr>
+                  <?php endwhile; ?>
+                </table>
+              </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -176,27 +212,27 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
               </button>
             </div>
             <div class="modal-body">
-              <form method="post" >
+              <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                 <div class="form-group">
                   <label for="fname">First Name</label>
-                  <input type="text" class="form-control" id="fname" aria-describedby="First-Name" placeholder="Enter First Name">
+                  <input type="text" class="form-control" name="fname" aria-describedby="First-Name" value="<?php echo $_SESSION["id"]; ?>">
                 </div>
                 <div class="form-group">
                   <label for="lname">Last Name</label>
-                  <input type="text" class="form-control" id="lname" placeholder="Enter Last Name">
+                  <input type="text" class="form-control" name="lname" value="<?php echo $_SESSION["lastname"]; ?>">
                 </div>
                 <div class="form-group">
                   <label for="dob">D.O.B</label>
-                  <input type="date" class="form-control" id="dob" placeholder="Date of Birth">
+                  <input type="date" class="form-control" name="dob" value="<?php echo $_SESSION["bd"]; ?>">
                 </div>
-                
-                
-              </form>
+
 
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="submit" name="updateinfo" class="btn btn-primary">Save changes</button>
+              </form>
+
             </div>
           </div>
         </div>
@@ -233,13 +269,13 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                             <option value="Dental">Dental</option>
                             <option value="Medical">Medical</option>
                             <option value="Lab">Lab Work</option>
-                            <option value="Check_Up">Check up</option>
+                            <option value="Check Up">Check up</option>
                           </select>
                         </div>
                       </div>
                     </div>
                     <div class="form-group">
-                      <input type="text" class="form-control" name="contact" placeholder="Phone">
+                      <input type="number" class="form-control" name="contact" placeholder="Phone">
                     </div>
                   </div>
                   <div class="">
@@ -262,6 +298,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                       <input type="submit" name="sub_appointment" value="Appointment" class="btn btn-secondary py-3 px-4">
                     </div>
                   </div>
+
                 </form>
               </div>
               <div class="modal-footer">

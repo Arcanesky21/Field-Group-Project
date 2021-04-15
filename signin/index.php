@@ -24,9 +24,10 @@
 	<link rel="stylesheet" href="../css/style.css">
 
 	<?php
+	session_start();
 	require_once "../signin/regappointment.php" ?>
 
-	
+
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -80,7 +81,7 @@
 				<div class="col-md-6 pt-5 ftco-animate">
 					<div class="mt-5">
 						<span class="subheading">Welcome to Norther Caribbean University Medical Center</span>
-						<h1 class="mb-4" style="color: white;" >We are here <br>for your Care</h1>
+						<h1 class="mb-4" style="color: white;">We are here <br>for your Care</h1>
 						<p class="mb-4" style="color: white;">When you have a dream, you've got to grab it and never let go.</p>
 						<p><a href="#apointment_submission" class="btn btn-primary py-3 px-4">Make an appointment</a></p>
 					</div>
@@ -165,9 +166,9 @@
 				</div>
 				<div class="col-md-5 d-flex">
 					<div class="appointment-wrap bg-white p-4 p-md-5 d-flex align-items-center">
-						<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" class="appointment-form ftco-animate">
+						<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="appointment-form ftco-animate">
 							<h3 id="apointment_submission">Consultation</h3>
-							<?php displaymessage(); ?>
+							
 							<div class="">
 								<div class="form-group">
 									<input type="text" class="form-control" placeholder="First Name" name="First-Name">
@@ -186,13 +187,13 @@
 												<option value="Dental">Dental</option>
 												<option value="Medical">Medical</option>
 												<option value="Lab">Lab Work</option>
-												<option value="Check_Up">Check up</option>
+												<option value="Check Up">Check up</option>
 											</select>
 										</div>
 									</div>
 								</div>
 								<div class="form-group">
-									<input type="text" class="form-control" name="contact" placeholder="Phone">
+									<input type="number" class="form-control" name="contact" placeholder="Phone">
 								</div>
 							</div>
 							<div class="">
@@ -203,7 +204,7 @@
 								</div>
 								<div class="form-group">
 									<div class="input-wrap">
-										<input type="time"  name="apptime" class="form-control appointment_time" placeholder="Time">
+										<input type="time" name="apptime" class="form-control appointment_time" placeholder="Time">
 									</div>
 								</div>
 							</div>

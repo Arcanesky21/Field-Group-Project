@@ -8,13 +8,13 @@ $dbname = "medicalcenter";
 
 $db = new mysqli($servername, $username, $passwor, $dbname);
 
-$fname = $lname = $service = $contact = $moddate = $date = $time = $newdate = $message = "";
+$fname = $userID = $lname = $service = $contact = $moddate = $date = $time = $newdate = $message = "";
 
 if(isset($_POST["sub_appointment"])){
     if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         header("location: signin.php");
         echo "Please log in first";
-        exit;
+        exit();
       }else
       {
         $fname = mysqli_real_escape_string($db, $_POST['First-Name']);
@@ -24,14 +24,14 @@ if(isset($_POST["sub_appointment"])){
         $date = mysqli_real_escape_string($db, $_POST['appdate']);
         $time = mysqli_real_escape_string($db, $_POST['apptime']);
         $message = mysqli_real_escape_string($db, $_POST['message']);
+        $userID = $_SESSION["idnum"];
 
         $moddate = $date ." ". $time;
         $newdate = DateTime::createFromFormat('Y-m-d H:i:A', $moddate);
       
-        $sqlquery = "INSERT INTO appointments(first_name,last_name,services,appdate,contact,messages) VALUES ('$fname','$lname','$service','$moddate','$contact','$message')";
-
+        $sqlquery = "INSERT INTO appointments(first_name,last_name,services,appdate,contact,messages,ID) VALUES ('$fname','$lname','$service','$moddate','$contact','$message','$userID')";
         $appdata = mysqli_query($db,$sqlquery);
-        
+        $_SESSION["appointment"] = "Appointment successful";
       }
 }
 
