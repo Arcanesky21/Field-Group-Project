@@ -20,7 +20,7 @@ $fName = "";
 $lName = "";
 $email = "";
 $dOB = "";
-$gender = "";
+$status = "";
 $idNumber = " ";
 $password = "";
 
@@ -32,11 +32,30 @@ if (isset($_POST['reg_user'])) {
     $lName = mysqli_real_escape_string($db, $_POST['last_name']);
     $email = mysqli_real_escape_string($db, $_POST['email']);
     $dOB = mysqli_real_escape_string($db, $_POST['birth_date']);
-    $gender = mysqli_real_escape_string($db, $_POST['group1']);
+    $status = mysqli_real_escape_string($db, $_POST['group1']);
     $idNumber = mysqli_real_escape_string($db, $_POST['identification']);
     $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
     $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
 
+    if (empty($fName)) {
+        array_push($errors, "Please Enter First Name");
+    }
+
+    if (empty($lName)) {
+        array_push($errors, "Please Enter Last Name");
+    }
+
+    if (empty($email)) {
+        array_push($errors, "Please Enter Email Address");
+    }
+
+    if (empty($idNumber)) {
+        array_push($errors, "Please Enter ID Number");
+    }
+
+    if (empty($dOB)) {
+        array_push($errors, "Please Enter Date of Birth");
+    }
 
     if ($password_1 != $password_2) {
         array_push($errors, "The two passwords do not match");
@@ -56,12 +75,14 @@ if (isset($_POST['reg_user'])) {
         }
     }
 
+
+
     if (count($errors) == 0) {
-         $password = password_hash($password_1, PASSWORD_DEFAULT); //encrypt the password before saving in the database
+        $password = password_hash($password_1, PASSWORD_DEFAULT); //encrypt the password before saving in the database
         // $password = md5($password);
 
-        $query = "INSERT INTO registeredusers (registeredID,first_name,last_name,gender,dOB,email,pass) 
-                  VALUES('$idNumber', '$fName', '$lName', '$gender', '$dOB','$email','$password')";
+        $query = "INSERT INTO registeredusers (registeredID,first_name,last_name,reg_status,dOB,email,pass) 
+                  VALUES('$idNumber', '$fName', '$lName', '$status', '$dOB','$email','$password')";
 
         mysqli_query($db, $query);
         $_SESSION['first_name'] = $fName;

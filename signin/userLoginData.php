@@ -40,6 +40,9 @@ if (isset($_POST['commit'])) {
 			$_SESSION['username'] = $row["registeredID"];
 			$_SESSION['loggedin'] = true;
 			$_SESSION["id"] = $row["first_name"];
+			$_SESSION["lastname"] = $row["last_name"];
+			$_SESSION["bd"] = $row["dOB"];
+			$_SESSION["idnum"] = $row["registeredID"];
 			$_SESSION['success'] = "You are now logged in";
 			header('location: home.php');
 		} else {
@@ -47,5 +50,4 @@ if (isset($_POST['commit'])) {
 		} 
 	} 
 }
-mysqli_close($db);
-mysqli_close($conn);
+
