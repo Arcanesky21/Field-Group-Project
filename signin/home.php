@@ -59,7 +59,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         <div class="form-group  ">
         </div>
 
-        ?>
+       
       </form>
     </div>
     <div>
