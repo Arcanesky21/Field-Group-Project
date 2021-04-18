@@ -59,7 +59,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         <div class="form-group  ">
         </div>
 
-        ?>
+
       </form>
     </div>
     <div>
@@ -193,6 +193,29 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             </div>
             <div class="modal-body">
               <?php require_once "getnotes.php"; ?>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>
+                      First Name
+                    </th>
+                    <th>
+                      Last Name
+                    </th>
+                    <th>
+                      Dr Notes
+                    </th>
+                  </tr>
+                </thead>
+                <?php while ($nte = $q4result->fetch_assoc()) : ?>
+                  <tr>
+                    <td><?php echo $nte["dr_fname"]; ?></td>
+                    <td><?php echo $nte["dr_lname"]; ?></td>
+                    <td><?php echo $nte["drNotes"]; ?></td>
+                    <td></td>
+                  </tr>
+                <?php endwhile; ?>
+              </table>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

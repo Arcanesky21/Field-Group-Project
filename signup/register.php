@@ -87,6 +87,6 @@ if (isset($_POST['reg_user'])) {
         mysqli_query($db, $query);
         $_SESSION['first_name'] = $fName;
         $_SESSION['success'] = "You are now logged in";
-        header('location:home.php');
+        header('location:/Field-Group-Project/signin/home.php');
     }
 }

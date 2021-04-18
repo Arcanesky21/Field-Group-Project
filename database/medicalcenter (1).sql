@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2021 at 01:17 AM
+-- Generation Time: Apr 17, 2021 at 08:08 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.2.34
 
@@ -66,15 +66,17 @@ INSERT INTO `appointments` (`first_name`, `last_name`, `services`, `contact`, `a
 CREATE TABLE `drnotes` (
   `registeredID` int(20) NOT NULL,
   `drNotes` varchar(200) NOT NULL,
-  `drID` int(20) NOT NULL
+  `drID` int(20) NOT NULL,
+  `dr_fname` text NOT NULL,
+  `dr_lname` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `drnotes`
 --
 
-INSERT INTO `drnotes` (`registeredID`, `drNotes`, `drID`) VALUES
-(123, 'ran notes from dr', 0);
+INSERT INTO `drnotes` (`registeredID`, `drNotes`, `drID`, `dr_fname`, `dr_lname`) VALUES
+(123, 'ran notes from dr', 0, 'john', 'doe');
 
 -- --------------------------------------------------------
 
@@ -110,18 +112,12 @@ CREATE TABLE `registeredusers` (
 
 INSERT INTO `registeredusers` (`registeredID`, `first_name`, `last_name`, `reg_status`, `dOB`, `email`, `pass`) VALUES
 (22, ' tcjtyt', 'francis', 'Doctor', '2021-04-11', 'alphademonempire@outlook.com', '$2y$10$Cp7d2y/rcMgIdyclNCPY9eaAiz9Hvs730hJNTgqFQGs3j6sEeBpIy'),
-(123, 'mikarlo333', 'choseneeee', 'Student', '2021-05-05', 'mikarlo@stu.ncu.edu.jm', '$2y$10$0zog9.dM3TwC7JSpp0WA/.R/UR4CanT3jN6jcmlkyPP9Zv66wRsoG');
+(123, 'mikarlo333', 'choseneeee', 'Student', '2021-05-05', 'mikarlo@stu.ncu.edu.jm', '$2y$10$0zog9.dM3TwC7JSpp0WA/.R/UR4CanT3jN6jcmlkyPP9Zv66wRsoG'),
+(20181379, 'mikarlo', 'francis', 'Student', '2021-04-27', 'arcanesky23@gmail.com', '$2y$10$K/YcBbZq0VrOMpromAG9F.caVvXocmPg7HW71UEkDkoa6rppuky8m');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `drnotes`
---
-ALTER TABLE `drnotes`
-  ADD PRIMARY KEY (`drID`),
-  ADD KEY `registeredID` (`registeredID`);
 
 --
 -- Indexes for table `registereddr`
