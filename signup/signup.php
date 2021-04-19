@@ -49,19 +49,7 @@
                             <label for="password">Password :</label>
                             <input type="password" name="password_2" id="pass2" placeholder="Confirm Password" maxlength="20"  />
                         </div>
-                        <div class="form-radio">
-                            <label for="gender" class="radio-label">Status :</label>
-                            <div class="form-radio-item">
-                                <input type="radio" name="group1" id="student" value="Student" checked>
-                                <label for="student">Student</label>
-                                <span class="check"></span>
-                            </div>
-                            <div class="form-radio-item">
-                                <input type="radio" name="group1" id="doctor" value="Doctor">
-                                <label for="doctor">Doctor</label>
-                                <span class="check"></span>
-                            </div>
-                        </div>
+                       
                         
 
                         <div class="form-group">

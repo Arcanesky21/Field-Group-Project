@@ -12,12 +12,8 @@ if (isset($_POST['updateinfo'])) {
 
     $updatequery = "UPDATE registeredusers SET first_name = '$fname',last_name = '$lname',dOB = '$dOB' WHERE registeredID = '$user'";
     $updateresult = mysqli_query($db, $updatequery);
-    $_SESSION['update'] = "update was successfull";
+    $_SESSION['statmsg'] = "Update successfull";
+    $_SESSION['msg_type'] = "success";
 }
 
-function updatesuccess()
-{
-    if (isset($_SESSION['update']) === true) {
-        echo $_SESSION['update'];
-    }
-}
+

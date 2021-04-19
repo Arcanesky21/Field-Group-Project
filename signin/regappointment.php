@@ -31,7 +31,8 @@ if(isset($_POST["sub_appointment"])){
       
         $sqlquery = "INSERT INTO appointments(first_name,last_name,services,appdate,contact,messages,ID) VALUES ('$fname','$lname','$service','$moddate','$contact','$message','$userID')";
         $appdata = mysqli_query($db,$sqlquery);
-        $_SESSION["appointment"] = "Appointment successful";
+        $_SESSION['statmsg'] = "Appointment scheduled";
+        $_SESSION['msg_type'] = "success";
       }
 }
 

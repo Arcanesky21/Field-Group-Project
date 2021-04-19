@@ -1,10 +1,30 @@
 <?php session_start();
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-  header("location: signin.php");
+  header("location:signin.php");
   exit;
 }
-?>
+if($_SESSION['status'] == "Doctor"){
+    header('location:RealdocHome.php');
+    exit;
+  }
 
+  
+
+?>
+ <?php require_once "userLoginData.php";
+  require_once "regappointment.php";
+  require_once "edituser.php";
+  ?>
+<?php
+if(isset($_SESSION['statmsg'])): ?>
+<div class="alert alert-<?=$_SESSION['msg_type']?>">
+<?php 
+echo $_SESSION['statmsg'];
+unset($_SESSION['statmsg']);
+
+?>
+</div>
+<?php endif; ?>
 
 <html lang="en">
 
@@ -35,10 +55,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   <script src="https://kit.fontawesome.com/99738b2def.js" crossorigin="anonymous"></script>
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <?php require_once "userLoginData.php";
-  require_once "regappointment.php";
-  require_once "edituser.php";
-  ?>
+ 
 
 </head>
 

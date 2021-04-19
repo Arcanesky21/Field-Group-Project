@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2021 at 08:08 AM
+-- Generation Time: Apr 19, 2021 at 07:26 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.2.34
 
@@ -24,6 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `allusers`
+--
+
+CREATE TABLE `allusers` (
+  `ID` int(10) NOT NULL,
+  `first_name` varchar(20) NOT NULL,
+  `last_name` varchar(20) NOT NULL,
+  `status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `allusers`
+--
+
+INSERT INTO `allusers` (`ID`, `first_name`, `last_name`, `status`) VALUES
+(20180000, 'Jane', 'Doe', 'Doctor'),
+(20181379, 'John', 'Doe', 'Student');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `appointments`
 --
 
@@ -34,28 +55,17 @@ CREATE TABLE `appointments` (
   `contact` text NOT NULL,
   `appdate` text NOT NULL,
   `messages` text NOT NULL,
-  `ID` int(20) NOT NULL
+  `ID` int(20) NOT NULL,
+  `idkey` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `appointments`
 --
 
-INSERT INTO `appointments` (`first_name`, `last_name`, `services`, `contact`, `appdate`, `messages`, `ID`) VALUES
-('mikarlo', 'francis', 'Dental', '8764420428', '2021-04-19 18:36', 'hhhhh', 0),
-('adasd', 'sdfvsdfv', 'Lab', '8764420428', '2021-04-12 ', '', 0),
-('adasd', 'sdfvsdfv', 'Lab', '8764420428', '2021-04-12 ', '', 0),
-('mikarlo', 'francis', 'Medical', '8764420428', '2021-04-27 08:06', 'edcascaweawc', 0),
-('mikarlo', 'francis', 'Medical', '8764420428', '2021-04-27 08:07', '2', 123),
-('mikarlo', 'francis', 'Dental', '8764420428', '2021-04-28 08:34', 'ececasdc', 123),
-('mikarlo', 'francis', 'Check_Up', '8764420428', '2021-04-13 ', '', 123),
-('mikarlo', 'sdfvsdfv', 'Medical', '8764420428', '2021-04-28 09:11', 'eee', 123),
-('mikarlo', 'adfad', 'Dental', '8764420428', '2021-04-14 22:12', 'ee', 123),
-('mikarlo', 'francisee', 'Dental', '8764420428', '2021-04-28 09:15', 'ee', 123),
-('mikarlo', 'wwww', 'Dental', 'ww', '2021-04-27 11:11', 'fff', 123),
-('xsa', 'sdfvsdfv', 'Dental', '8764420428', '2021-04-06 08:16', 'ffffff', 123),
-('', '', '', 'dddd', ' ', '', 123),
-('', '', '', 'dddd', ' ', '', 123);
+INSERT INTO `appointments` (`first_name`, `last_name`, `services`, `contact`, `appdate`, `messages`, `ID`, `idkey`) VALUES
+('mikarlo', 'francis', 'Dental', '8764420428', '2021-04-28 02:10', 'ff', 20181379, 24),
+('mikarlo', 'francis', 'Dental', '8764420428', '2021-05-05 11:11', 'f', 20181379, 25);
 
 -- --------------------------------------------------------
 
@@ -68,15 +78,19 @@ CREATE TABLE `drnotes` (
   `drNotes` varchar(200) NOT NULL,
   `drID` int(20) NOT NULL,
   `dr_fname` text NOT NULL,
-  `dr_lname` text NOT NULL
+  `dr_lname` text NOT NULL,
+  `ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `drnotes`
 --
 
-INSERT INTO `drnotes` (`registeredID`, `drNotes`, `drID`, `dr_fname`, `dr_lname`) VALUES
-(123, 'ran notes from dr', 0, 'john', 'doe');
+INSERT INTO `drnotes` (`registeredID`, `drNotes`, `drID`, `dr_fname`, `dr_lname`, `ID`) VALUES
+(123, 'ran notes from dr', 0, 'john', 'doe', 1),
+(20181379, '', 20180000, ' tcjtyt', 'chosen', 4),
+(0, '', 20180000, ' tcjtyt', 'chosen', 5),
+(20181379, 'inserting user notes for patient', 20180000, ' tcjtyt', 'chosen', 6);
 
 -- --------------------------------------------------------
 
@@ -111,13 +125,30 @@ CREATE TABLE `registeredusers` (
 --
 
 INSERT INTO `registeredusers` (`registeredID`, `first_name`, `last_name`, `reg_status`, `dOB`, `email`, `pass`) VALUES
-(22, ' tcjtyt', 'francis', 'Doctor', '2021-04-11', 'alphademonempire@outlook.com', '$2y$10$Cp7d2y/rcMgIdyclNCPY9eaAiz9Hvs730hJNTgqFQGs3j6sEeBpIy'),
-(123, 'mikarlo333', 'choseneeee', 'Student', '2021-05-05', 'mikarlo@stu.ncu.edu.jm', '$2y$10$0zog9.dM3TwC7JSpp0WA/.R/UR4CanT3jN6jcmlkyPP9Zv66wRsoG'),
-(20181379, 'mikarlo', 'francis', 'Student', '2021-04-27', 'arcanesky23@gmail.com', '$2y$10$K/YcBbZq0VrOMpromAG9F.caVvXocmPg7HW71UEkDkoa6rppuky8m');
+(20180000, ' tcjtyt', 'chosen', 'Doctor', '2021-04-21', 'mikarlo@stu.ncu.edu.jm', '$2y$10$hkMZLfK7BoMqXM.gaKALQ.XgdeEe2Sz3OCkcFErlHvAzi1z9k.oEO'),
+(20181379, 'mikarloe', 'francis', 'Student', '2021-04-21', 'fallensky200@gmail.com', '$2y$10$OWY9ILJRiYLN.CyDBxIOXOWppIfCkeS5RqOitsnbla./gYsAYDBNC');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `allusers`
+--
+ALTER TABLE `allusers`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `appointments`
+--
+ALTER TABLE `appointments`
+  ADD PRIMARY KEY (`idkey`);
+
+--
+-- Indexes for table `drnotes`
+--
+ALTER TABLE `drnotes`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `registereddr`
@@ -131,6 +162,22 @@ ALTER TABLE `registereddr`
 ALTER TABLE `registeredusers`
   ADD PRIMARY KEY (`registeredID`),
   ADD UNIQUE KEY `Email` (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `appointments`
+--
+ALTER TABLE `appointments`
+  MODIFY `idkey` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT for table `drnotes`
+--
+ALTER TABLE `drnotes`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
