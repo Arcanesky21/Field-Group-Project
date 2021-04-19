@@ -32,7 +32,6 @@ if (isset($_POST['reg_user'])) {
     $lName = mysqli_real_escape_string($db, $_POST['last_name']);
     $email = mysqli_real_escape_string($db, $_POST['email']);
     $dOB = mysqli_real_escape_string($db, $_POST['birth_date']);
-    $status = mysqli_real_escape_string($db, $_POST['group1']);
     $idNumber = mysqli_real_escape_string($db, $_POST['identification']);
     $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
     $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
@@ -60,33 +59,42 @@ if (isset($_POST['reg_user'])) {
     if ($password_1 != $password_2) {
         array_push($errors, "The two passwords do not match");
     }
+    $queryverify = "SELECT * FROM allusers WHERE ID = '$idNumber'";
+    $qverifyy = mysqli_query($db, $queryverify);
+    $data = mysqli_fetch_array($qverifyy);
 
-    $user_check_query = "SELECT * FROM registeredusers WHERE registeredID='$idNumber' OR email='$email' LIMIT 1";
-    $result = mysqli_query($db, $user_check_query);
-    $user = mysqli_fetch_assoc($result);
+    if ($data['ID'] != $idNumber) {
+        array_push($errors, "Please contact finance or where ever, i dunno youre not in the system");
+    } else {
 
-    if ($user) { // if user exists
-        if ($user['registeredID'] === $idNumber) {
-            array_push($errors, "ID already exists");
+        $status = $data['status'];
+        $user_check_query = "SELECT * FROM registeredusers WHERE registeredID='$idNumber' OR email='$email' LIMIT 1";
+        $result = mysqli_query($db, $user_check_query);
+        $user = mysqli_fetch_assoc($result);
+
+        if ($user) { // if user exists
+            if ($user['registeredID'] === $idNumber) {
+                array_push($errors, "ID already exists");
+            }
+
+            if ($user['email'] === $email) {
+                array_push($errors, "Email already exists");
+            }
         }
 
-        if ($user['email'] === $email) {
-            array_push($errors, "Email already exists");
-        }
-    }
 
 
+        if (count($errors) == 0) {
+            $password = password_hash($password_1, PASSWORD_DEFAULT); //encrypt the password before saving in the database
 
-    if (count($errors) == 0) {
-        $password = password_hash($password_1, PASSWORD_DEFAULT); //encrypt the password before saving in the database
-        // $password = md5($password);
 
-        $query = "INSERT INTO registeredusers (registeredID,first_name,last_name,reg_status,dOB,email,pass) 
+            $query = "INSERT INTO registeredusers (registeredID,first_name,last_name,reg_status,dOB,email,pass) 
                   VALUES('$idNumber', '$fName', '$lName', '$status', '$dOB','$email','$password')";
 
-        mysqli_query($db, $query);
-        $_SESSION['first_name'] = $fName;
-        $_SESSION['success'] = "You are now logged in";
-        header('location:/Field-Group-Project/signin/home.php');
+            mysqli_query($db, $query);
+            $_SESSION['first_name'] = $fName;
+            $_SESSION['success'] = "You are now logged in";
+            header('location:/Field-Group-Project/signin/home.php');
+        }
     }
 }

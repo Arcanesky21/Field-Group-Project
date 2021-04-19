@@ -11,7 +11,8 @@ $dbname = "medicalcenter";
 $db = new mysqli($servername, $username, $passwor, $dbname);
 $errors = array();
 $pass_error = $id_error = $username = $password = $row = $query = $query1 = $passquery = "";
-
+$student = "Student";
+$dr = "Doctor";
 
 if (isset($_POST['commit'])) {
 	$username = trim(mysqli_real_escape_string($db, $_POST['id_Number']));
@@ -44,7 +45,13 @@ if (isset($_POST['commit'])) {
 			$_SESSION["bd"] = $row["dOB"];
 			$_SESSION["idnum"] = $row["registeredID"];
 			$_SESSION['success'] = "You are now logged in";
-			header('location: home.php');
+			$_SESSION['status'] = $row['reg_status'];
+			if($_SESSION['status'] == $student){
+			header('location:home.php');
+			}elseif($_SESSION['status'] == $dr){
+				header('location:RealdocHome.php');
+			}
+			
 		} else {
 			echo "Wrong username/password combination";
 		} 
