@@ -1,8 +1,17 @@
 <?php
 session_start();
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-	
+	if ($_SESSION['status'] == "Student") {
+		header('location: home.php');
+		exit;
+	  }elseif($_SESSION['status'] == "Doctor"){
+		header('location:RealdocHome.php');
+		exit;
+	  }
 }
+
+
+
 
 ?>
 
