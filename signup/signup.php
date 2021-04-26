@@ -24,7 +24,7 @@
                 </div>
                 <div class="signup-form">
                     <form method="POST" class="register-form" id="register-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                        <h2>student registration form</h2>
+                        <h2>patient registration form</h2>
                         <?php require "errors.php" ?>
                         <div class="form-row">
                             <div class="form-group">
