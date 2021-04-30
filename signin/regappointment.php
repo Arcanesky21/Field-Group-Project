@@ -29,7 +29,8 @@ if(isset($_POST["sub_appointment"])){
         $moddate = $date ." ". $time;
         $newdate = DateTime::createFromFormat('Y-m-d H:i:A', $moddate);
       
-        $sqlquery = "INSERT INTO appointments(first_name,last_name,services,appdate,contact,messages,ID) VALUES ('$fname','$lname','$service','$moddate','$contact','$message','$userID')";
+        $sqlquery = "INSERT INTO appointments(first_name,last_name,services,appdate,contact,messages,ID) 
+        VALUES ('$fname','$lname','$service','$moddate','$contact','$message','$userID')";
         $appdata = mysqli_query($db,$sqlquery);
         $_SESSION['statmsg'] = "Appointment scheduled";
         $_SESSION['msg_type'] = "success";

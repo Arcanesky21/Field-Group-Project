@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>NCU Health</title>
+	<title>NCU TeleHealth</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -168,7 +168,7 @@
 					<div class="appointment-wrap bg-white p-4 p-md-5 d-flex align-items-center">
 						<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="appointment-form ftco-animate">
 							<h3 id="apointment_submission">Consultation</h3>
-							
+
 							<div class="">
 								<div class="form-group">
 									<input type="text" class="form-control" placeholder="First Name" name="First-Name">
